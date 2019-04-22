@@ -189,7 +189,7 @@ curl 'https://api.apichecker.com/graph' -H 'Content-Type: application/json' -H '
 Or similar analog with POST request to /graph/ endpoint, where body will be QUERY.
 
 
-## Custom GraphQL clients
+# Custom GraphQL clients
 
 You also can you any custom client to fetch data from ApiChecker or explore ApiChecker API.
 
