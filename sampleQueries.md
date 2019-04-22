@@ -158,3 +158,23 @@ Response:
   }
 }
 ```
+
+## Pause monitoring
+
+In case if you want to stop one monitor in application:
+```graphql
+mutation {
+    changeMonitorStatus(monitorId: "{yourMonitorID}", enable: true, delay:20000)
+}
+```
+
+In case if you want to stop whole application monitoring, including all nested monitors:
+```graphql
+mutation {
+  changeApplicationStatus(applicationId: "{yourAppId}", enable: false, delay: 1000)
+}
+```
+
+As return object you will get `Boolean` value: 
+* `true` in case of successfully completed method
+* 'false' in case if something went wrong
