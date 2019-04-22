@@ -7,6 +7,14 @@ Currently API server located at this URL: [https://api.apichecker.com/graph/](ht
 We also have setup Playground editor for ApiChecker - so you can explore it using real data (from your account).
 Also on this URL you will able to find the GraphQL Playground.
 
+Playground allow you to create your own customizable queries using ApiChecker API
+![GraphQL playground](_media/playgroudEditor.png)
+
+Don't forget to set HTTP headers on playground. HTTP header name is `api_key` where value is your access token.
+
+!> Playground don't work without `api_key` header set. You still need to register your API Access Token first, and then put this token on 
+HTTP headers section. Header name should be: `api_key`. 
+
 # Get Started
 You are invited to get started using ApiChecker. You may explore ApiChecker by:
 
@@ -161,10 +169,10 @@ Where:
 
 So in below example we will enable monitoring after 20000 milliseconds (one deploy will be completed totally). 
 
-If you want to call it via normal/regular HTTP url, just you below request url:
+If you want to call it via normal/regular HTTP url, you can just use below CURL sample:
 
-```http
-https://api.apichecker/graph/?mutation={changeMonitorStatus(monitorId:"5c90908f147dfd00105961f3",enable:false,delay:20000)}
+```curl
+curl 'https://api.apichecker.com/graph' -H 'Content-Type: application/json' -H 'api_key: {YourAccessTOKEN}' --data-binary '{"query":"mutation {\n  changeMonitorStatus(monitorId: \"5c90908f147dfd00105961f3\", enable: false, delay:20000)\n}"}'
 ```
 
 Or similar analog with POST request to /graph/ endpoint, where body will be QUERY.
