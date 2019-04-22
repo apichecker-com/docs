@@ -156,14 +156,23 @@ And as result you will only get information that you request/need:
 You probably will want to pause monitoring during releases or deployments.
 We have API for pause/resume API - it's also served by GraphQL:
 
+In case if you want to stop one monitor in application:
 ```graphql
 mutation {
     changeMonitorStatus(monitorId: "{yourMonitorID}", enable: true, delay:20000)
 }
 ```
 
+In case if you want to stop whole application monitoring, including all nested monitors:
+```graphql
+mutation {
+  changeApplicationStatus(applicationId: "{yourAppId}", enable: false, delay: 1000)
+}
+```
+
 Where: 
 * `monitorId` is your monitorID that you want to pause
+* `applicationId` is your Application ID that you want to pause
 * `enable` - true is you want to resume Monitoring, false if you want to pause it
 * `delay` - count of milliseconds that ApiChecker should wait until request will take effect (change monitoring status)  
 

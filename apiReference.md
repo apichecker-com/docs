@@ -97,6 +97,30 @@ Method to pause or resume monitoring for selected monitor
 <td valign="top"><a href="/#/apiReference?id=int">Int</a></td>
 <td></td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong>changeApplicationStatus</strong></td>
+<td valign="top"><a href="/#/apiReference?id=boolean">Boolean</a>!</td>
+<td>
+
+Method to pause or resume monitoring for selected Application and all nested monitors
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">applicationId</td>
+<td valign="top"><a href="/#/apiReference?id=string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">enable</td>
+<td valign="top"><a href="/#/apiReference?id=boolean">Boolean</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">delay</td>
+<td valign="top"><a href="/#/apiReference?id=int">Int</a></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 

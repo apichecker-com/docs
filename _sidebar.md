@@ -1,3 +1,3 @@
 * [🚀 Getting started](/)
-* [Sample queries](sampleQueries.md)
-* [API Reference](apiReference.md)
+* [✈️ Sample queries](sampleQueries.md)
+* [🔑 API Reference](apiReference.md)
