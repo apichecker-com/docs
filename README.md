@@ -1,6 +1,8 @@
-# ApiChecker Documentation
-Welcome to the ApiChecker API documentation 👋
-Below you will able to find quick summary of open API for ApiChecker
+# ApiChecker API Documentation
+Welcome to the ApiChecker open API documentation 👋
+Below you will able to find quick summary of open API for ApiChecker.
+
+We provide GraphQL backend that will ensure you have best quality API for your needs. 
 
 # API Server URL / Playground
 Currently API server located at this URL: [https://api.apichecker.com/graph/](https://api.apichecker.com/graph/)
@@ -154,7 +156,7 @@ And as result you will only get information that you request/need:
 # Pause uptime monitoring during deployment
 
 You probably will want to pause monitoring during releases or deployments.
-We have API for pause/resume API - it's also served by GraphQL:
+We have API for pause/resume monitoring - it's also served by GraphQL:
 
 In case if you want to stop one monitor in application:
 ```graphql
@@ -185,3 +187,22 @@ curl 'https://api.apichecker.com/graph' -H 'Content-Type: application/json' -H '
 ```
 
 Or similar analog with POST request to /graph/ endpoint, where body will be QUERY.
+
+
+## Custom GraphQL clients
+
+You also can you any custom client to fetch data from ApiChecker or explore ApiChecker API.
+
+As example you can use: 
+* [Insomnia](https://insomnia.rest/graphql/) - MacOs, Windows, Linux
+* [graphql-request](https://github.com/prisma/graphql-request) - js
+* [Altair GraphQL](https://altair.sirmuel.design/) - Mac, Windows, Linux, Web, Chrome, Firefox
+* any library for GraphQL communications for any language, such as: Swift, NodeJS, JS, Python, C#, etc
+
+You will get rich autocomplete feature served by ApiChecker API, with documentation for every field and query.
+
+As example, this is screenshot from `Insomnia` client when using ApiChecker API:
+
+![Insomnia client](_media/Insomnia.png)
+
+As you can see we have autocomplete feature for our queries, that make great developer experience.
