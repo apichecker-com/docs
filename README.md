@@ -1,34 +1,33 @@
 # ApiChecker API Documentation
 Welcome to the ApiChecker open API documentation 👋
-Below you will able to find quick summary of open API for ApiChecker.
+Below you will able to find quick summary of ApiChecker API.
 
-We provide GraphQL backend that will ensure you have best quality API for your needs. 
+We serve our API based on GraphQL protocol that will ensure you have best quality API for your needs. 
 
 # API Server URL / Playground
-Currently API server located at this URL: [https://api.apichecker.com/graph/](https://api.apichecker.com/graph/)
-We also have setup Playground editor for ApiChecker - so you can explore it using real data (from your account).
-Also on this URL you will able to find the GraphQL Playground.
+Our API server available at this URL: [https://api.apichecker.com/graph/](https://api.apichecker.com/graph/)
+We also have Playground editor for ApiChecker API - so you can explore together with your account data.
 
-Playground allow you to create your own customizable queries using ApiChecker API
+Playground allow you to create your own customizable queries using GraphQL:
 ![GraphQL playground](_media/playgroudEditor.png)
 
 Don't forget to set HTTP headers on playground. HTTP header name is `api_key` where value is your access token.
 
 !> Playground don't work without `api_key` header set. You still need to register your API Access Token first, and then put this token on 
-HTTP headers section. Header name should be: `api_key`. 
+HTTP headers section. Header name should be: `api_key`. Just expand "HTTP Headers" section on left bottom menu - and put your Access Token here.
 
 # Get Started
-You are invited to get started using ApiChecker. You may explore ApiChecker by:
 
+There are few ways to get started with ApiChecker API:
 * GraphQL ApiChecker API (primary way)
 * Regular REST API
- 
-To start using our API you need create new API Token / Access token from your account.
+
+To start using our API you need create new API Token / Access token for your account first.
 To create Access Token follow below steps: 
 * Open your account setting on APiChecker Dashboard: [Dashboard](https://app.apichecker.com/account/settings/api), 
 * Enter your Access Token name
-* Click to "Generate button"
-* Copy and secure store token from field that will be showed below the button.
+* Click to "Generate" button
+* Copy value from field that will be showed below the button and  secure store token. It's showed only one time and you will not able to see it again.
 
 ![Access Token Generation](_media/createAccessToken.png)
 
@@ -40,7 +39,7 @@ To create Access Token follow below steps:
 Access token should be passed as part of every HTTP request to our API. 
 Header example:
 ```text
-api_key: $2axxxxxxx5qwg8ARwH5IMxnpR8X6Ko.P6x6dxxxxxxxxxxxxxxxxx123123
+"api_key": "$2axxxxxxx5qwg8ARwH5IMxnpR8X6Ko.P6x6dxxxxxxxxxxxxxxxxx123123"
 ```
 
 ## Code examples
@@ -155,17 +154,17 @@ And as result you will only get information that you request/need:
 
 # Pause uptime monitoring during deployment
 
-You probably will want to pause monitoring during releases or deployments.
-We have API for pause/resume monitoring - it's also served by GraphQL:
+You probably will want to pause ApiChecker Monitoring during your application or websites releases or deployments.
+We have API for pause/resume ApiChecker monitoring - it's also served by GraphQL:
 
-In case if you want to stop one monitor in application:
+In case if you want to stop one `monitor` in `application`:
 ```graphql
 mutation {
     changeMonitorStatus(monitorId: "{yourMonitorID}", enable: true, delay:20000)
 }
 ```
 
-In case if you want to stop whole application monitoring, including all nested monitors:
+In case if you want to stop whole `application` monitoring, including all nested `monitors`:
 ```graphql
 mutation {
   changeApplicationStatus(applicationId: "{yourAppId}", enable: false, delay: 1000)
