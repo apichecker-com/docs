@@ -171,15 +171,13 @@ mutation {
 }
 ```
 
-Where: 
-* `monitorId` is your monitorID that you want to pause
-* `applicationId` is your Application ID that you want to pause
+Where:
+* `monitorId` is your monitorID that you want to pause / resume
+* `applicationId` is your Application ID that you want to pause / resume
 * `enable` - true is you want to resume Monitoring, false if you want to pause it
 * `delay` - count of milliseconds that ApiChecker should wait until request will take effect (change monitoring status)  
 
-So in below example we will enable monitoring after 20000 milliseconds (one deploy will be completed totally). 
-
-If you want to call it via normal/regular HTTP url, you can just use below CURL sample:
+If you want to call it via normal/regular HTTP url, you can just use below CURL sample (TIP: you can copy raw CURL request from Playground Editor)
 
 ```curl
 curl 'https://api.apichecker.com/graph' -H 'Content-Type: application/json' -H 'api_key: {YourAccessTOKEN}' --data-binary '{"query":"mutation {\n  changeMonitorStatus(monitorId: \"5c90908f147dfd00105961f3\", enable: false, delay:20000)\n}"}'
